@@ -26,27 +26,36 @@ Open Postman and use the following guide to sign up, login and handle data:
 
 * Sign up:
 
-POST:
-`` localhost:8080/auth/register ``
+**POST:**
+``` 
+localhost:8080/auth/register
+```
 
-JSON body:
-``{
+**JSON body:**
+```
+{
 "firstName": "ellen",
 "lastName": "halvardsson",
 "email": "ellen@mail.com",
 "password" : "12345"
-}``
+}
+```
 
 * Login:
 
-POST:
-`` localhost:8080/auth/login ``
+**POST:**
+```
+json localhost:8080/auth/login 
+```
 
-JSON body:
-``{
+**JSON body:**
+
+```
+{
 "username" : "ellen",
 "password" : "12345"
-}``
+}
+```
 
 * Add a movie:
 
