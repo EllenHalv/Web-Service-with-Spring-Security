@@ -54,51 +54,67 @@ JSON body:
 * Login:
 
 POST:
-`` localhost:8080/auth/signin ``
+```
+localhost:8080/auth/signin 
+```
 
 JSON body:
-``{
+```
+{
 "username" : "ellen",
 "password" : "12345"
-}``
+}
+```
 
 * Add a movie:
 
 POST:
-`` localhost:8080/movies``
+```
+localhost:8080/movies
+```
 
 JSON body:
-``{
+```
+{
 "title" : "movieTitle",
 "year" : 0000
 }
-``
+```
 
 * Get one movie:
 
 GET:
-``localhost:8080/movies/{id}``
+```
+localhost:8080/movies/{id}
+```
 
 * Get all movies:
 
 GET:
-``localhost:8080/movies``
+```
+localhost:8080/movies
+```
 
 * Update a movie:
 
 PUT:
-``localhost:8080/movies``
+```
+localhost:8080/movies
+```
 
 JSON body:
-``{
+```
+{
 "title" : "newTitle",
 "year" : 0000
 }
-``
+```
 * Delete a movie:
 
 DELETE:
-``localhost:8080/movies/{id}``
+```
+localhost:8080/movies/{id}
+```
 
 ### Dependencies
 
