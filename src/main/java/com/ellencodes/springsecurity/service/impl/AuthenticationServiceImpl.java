@@ -14,6 +14,9 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+/**
+ * Service class handling user authentication-related operations.
+ */
 @Service
 @RequiredArgsConstructor
 public class AuthenticationServiceImpl implements AuthenticationService {
@@ -22,6 +25,8 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     private final JwtService jwtService;
     private final JwtServiceImpl jwtServiceImpl;
     private final AuthenticationManager authenticationManager;
+
+    // Registers a new user based on the provided signup request.
     @Override
     public JwtAuthenticationResponse signup(SignupRequest request) {
         var user = User.builder().firstName(request.getFirstName()).lastName(request.getLastName())
@@ -33,6 +38,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         return JwtAuthenticationResponse.builder().responseMessage(message).token(jwt).build();
     }
 
+    // Authenticates a user based on the provided signin request.
     @Override
     public JwtAuthenticationResponse signin(SigninRequest request) {
         authenticationManager.authenticate(

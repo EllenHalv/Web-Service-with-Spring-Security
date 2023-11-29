@@ -5,8 +5,8 @@ spring:
     # Provide database platform that is being used
     database-platform: org.hibernate.dialect.MySQLDialect
     hibernate:
-      # New database is created when application starts and destroyed when application is stopped
-      ddl-auto: create-drop
+      # Hibernate ddl auto (create, create-drop, validate, update)
+      ddl-auto: update
     # Show sql when spring data jpa performs query
     show-sql: true
     properties:
@@ -18,8 +18,9 @@ spring:
     url: jdbc:mysql://localhost:3306/spring-security
     # H2 sql Driver
     driver-class-name: com.mysql.cj.jdbc.Driver
+    # Database username and password (TODO change these credentials to your own)
     username: root
-    password: 12345
+    password: password
   h2:
     console:
       enabled: true

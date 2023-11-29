@@ -10,8 +10,9 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * controller class. skickar vidare request till service class som använder jpa repository
+ * Controller class that forwards requests to the service class, which utilizes JPA repository.
  */
+
 @RestController
 @RequestMapping("/movies")
 public class MovieController {

@@ -140,25 +140,6 @@ localhost:8080/movies/{id}
 
 ### CRUD operations for users: (only for admin)
 
-Update a user:
-
-PUT:
-```
-localhost:8080/users
-```
-
-JSON body:
-```
-{
-"firstName": "newFirstName",
-"lastName": "newLastName",
-"email": "newEmail"
-"password" : "newPassword"
-}
-```
-
-----------------------------
-
 Delete a user:
 
 DELETE:
@@ -216,5 +197,7 @@ Contributions and suggestions are welcome! To report bugs, make suggestions or c
 Alternatively, if you find a bug or have a suggestion, you can open an issue.
 
 ## Tests
+
+The application has unit tests for the MovieController class.
 
 

@@ -17,6 +17,11 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+/**
+ * Service implementation for handling JSON Web Tokens (JWT) in a Spring Security context.
+ * This class provides methods for extracting information from, generating, and validating JWTs.
+ * Additionally, it includes a response message helper for JWT-related operations.
+ */
 @Service
 public class JwtServiceImpl implements JwtService {
     private final JwtAuthenticationResponse jwtAuthResp = new JwtAuthenticationResponse();
@@ -28,6 +33,7 @@ public class JwtServiceImpl implements JwtService {
         return extractClaim(token, Claims::getSubject);
     }
 
+    // Generates a JWT for a given user details, including user roles
     @Override
     public String generateToken(UserDetails userDetails) {
         // Extracting user roles
@@ -55,6 +61,7 @@ public class JwtServiceImpl implements JwtService {
         return claimsResolvers.apply(claims);
     }
 
+    // Generates a JWT with specified claims and user details
     private String generateToken(Map<String, Object> extraClaims, UserDetails userDetails) {
         return Jwts.builder()
                 .setClaims(extraClaims)

@@ -1,5 +1,6 @@
 package com.ellencodes.springsecurity.controller;
 
+import com.ellencodes.springsecurity.entity.Movie;
 import com.ellencodes.springsecurity.entity.User;
 import com.ellencodes.springsecurity.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -34,19 +35,11 @@ public class AuthorizationController {
         return ResponseEntity.ok(userList.toString());
     }
 
-    @PutMapping("/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<String> update(
-            @PathVariable int id, @RequestBody User user) {
-        Optional<User> userToUpdate = userRepository.findById(id);
-        userRepository.save(user);
-        return ResponseEntity.ok("User updated");
-    }
-
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<String> delete(
-            @PathVariable int id) {
+            @PathVariable int id
+    ) {
         userRepository.deleteById(id);
         return ResponseEntity.ok("User deleted");
     }
