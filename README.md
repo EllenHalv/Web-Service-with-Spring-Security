@@ -37,17 +37,19 @@ Open Postman and use the following guide to sign up, login and handle data:
 * Sign up:
 
 POST:
-``
+```
 localhost:8080/auth/signup
-``
+```
 
 JSON body:
-``{
+```
+{
 "firstName": "ellen",
 "lastName": "halvardsson",
 "email": "ellen@mail.com",
 "password" : "12345"
-}``
+}
+```
 
 * Login:
 
