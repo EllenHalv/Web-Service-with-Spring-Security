@@ -32,9 +32,23 @@ Before you can run this application, make sure you have the following software a
 
 ### How to use
 
-Open Postman and use the following guide to sign up, login and handle data:
+* All endpoints can be used with Postman. 
+* The application has two roles: USER and ADMIN.
+* GET and POST requests to "/movies" can be used without authentication (without login as USER or ADMIN).
+* PUT and DELETE requests to "/movies" require authentication (JWT) which needs to be included through Postman as a Bearer Token.
+* The ADMIN role has access to all endpoints, while the USER role only has access to the endpoints for movies.
+* The USER role can only read and update movies.
+* One ADMIN user is created by default when the application is started. Use its credentials to test admin operations:
+  * email: admin@example.com
+  * password: adminPassword
 
-* Sign up:
+Open Postman and use the guide below to sign up, login and handle data:
+
+### Sign up and sign in:
+
+----------------------------
+
+Sign up:
 
 POST:
 ```
@@ -50,8 +64,9 @@ JSON body:
 "password" : "12345"
 }
 ```
+----------------------------
 
-* Login:
+Sign in:
 
 POST:
 ```
@@ -65,8 +80,10 @@ JSON body:
 "password" : "12345"
 }
 ```
+----------------------------
+### CRUD operations for movies:
 
-* Add a movie:
+Add a movie:
 
 POST:
 ```
@@ -80,22 +97,25 @@ JSON body:
 "year" : 0000
 }
 ```
+----------------------------
 
-* Get one movie:
+Get one movie:
 
 GET:
 ```
 localhost:8080/movies/{id}
 ```
+----------------------------
 
-* Get all movies:
+Get all movies:
 
 GET:
 ```
 localhost:8080/movies
 ```
+----------------------------
 
-* Update a movie:
+Update a movie:
 
 PUT:
 ```
@@ -109,12 +129,60 @@ JSON body:
 "year" : 0000
 }
 ```
-* Delete a movie:
+----------------------------
+Delete a movie:
 
 DELETE:
 ```
 localhost:8080/movies/{id}
 ```
+----------------------------
+
+### CRUD operations for users: (only for admin)
+
+Update a user:
+
+PUT:
+```
+localhost:8080/users
+```
+
+JSON body:
+```
+{
+"firstName": "newFirstName",
+"lastName": "newLastName",
+"email": "newEmail"
+"password" : "newPassword"
+}
+```
+
+----------------------------
+
+Delete a user:
+
+DELETE:
+```
+localhost:8080/users/{id}
+```
+----------------------------
+
+Get all users:
+
+GET:
+```
+localhost:8080/users
+```
+
+----------------------------
+
+Get one user:
+
+GET:
+```
+localhost:8080/users/{id}
+```
+----------------------------
 
 ### Dependencies
 
