@@ -37,7 +37,7 @@ Open Postman and use the following guide to sign up, login and handle data:
 * Sign up:
 
 POST:
-`` localhost:8080/auth/signup ``
+``` localhost:8080/auth/signup ```
 
 JSON body:
 ``{
