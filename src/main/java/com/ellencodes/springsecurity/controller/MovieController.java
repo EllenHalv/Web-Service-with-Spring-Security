@@ -74,7 +74,7 @@ public class MovieController {
         return ResponseEntity.ok(movielist);
     }
 
-    @GetMapping("/get") // todo titeln behöver vara i en payload annars kan man ej göra mellanslag
+    @GetMapping("/get")
     public ResponseEntity<Optional<Movie>> getOneByTitle(
             @RequestBody String title
     ) {

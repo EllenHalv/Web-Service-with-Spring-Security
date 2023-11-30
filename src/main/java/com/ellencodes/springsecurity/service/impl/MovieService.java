@@ -22,6 +22,7 @@ public class MovieService {
     public Movie save(Movie movie) {
         return repository.save(movie);
     }
+
     public Movie update(Movie newMovie, int id) throws Exception {
         Optional<Movie> optionalMovie = repository.findById(id);
 
@@ -29,20 +30,22 @@ public class MovieService {
             throw new Exception("Ingen film med id: " + id + " hittades");
         }
 
-        return repository.save(newMovie);
+        Movie existingMovie = optionalMovie.get();
+
+        existingMovie.setTitle(newMovie.getTitle());
+        existingMovie.setYear(newMovie.getYear());
+
+        return repository.save(existingMovie);
     }
 
     public Movie findById(int id) throws Exception {
-        Movie movie;
         Optional<Movie> optionalMovie = repository.findById(id);
 
         if (optionalMovie.isEmpty()) {
             throw new Exception("Ingen film med id: " + id + " hittades");
-        } else {
-            movie = optionalMovie.get();
         }
 
-        return movie;
+        return optionalMovie.get();
     }
 
     public void deleteById(int id) throws Exception {

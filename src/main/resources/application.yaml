@@ -20,7 +20,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     # Database username and password (TODO change these credentials to your own)
     username: root
-    password: password
+    password: 12345
   h2:
     console:
       enabled: true

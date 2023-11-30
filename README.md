@@ -58,10 +58,10 @@ localhost:8080/auth/signup
 JSON body:
 ```
 {
-"firstName": "ellen",
-"lastName": "halvardsson",
-"email": "ellen@mail.com",
-"password" : "12345"
+"firstName": "Jane",
+"lastName": "Doe",
+"email": "example@mail.com",
+"password" : "password"
 }
 ```
 ----------------------------
@@ -76,8 +76,8 @@ localhost:8080/auth/signin
 JSON body:
 ```
 {
-"username" : "ellen",
-"password" : "12345"
+"email" : "example@mail.com",
+"password" : "password"
 }
 ```
 ----------------------------
@@ -125,8 +125,9 @@ localhost:8080/movies
 JSON body:
 ```
 {
-"title" : "newTitle",
-"year" : 0000
+    "id": 1,
+    "title": "newTitle",
+    "year": 0000
 }
 ```
 ----------------------------
@@ -139,6 +140,46 @@ localhost:8080/movies/{id}
 ----------------------------
 
 ### CRUD operations for users: (only for admin)
+
+Add a user:
+
+POST:
+```
+localhost:8080/users
+```
+
+JSON body:
+```
+{
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "email": "example@mail.com",
+    "password": "password",
+    "role" : "USER"
+}
+```
+
+----------------------------
+
+Update a user:
+
+PUT:
+```
+localhost:8080/users/{id}
+```
+
+JSON body:
+```
+{
+    "id" : 2,
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "example@mail.com",
+    "password": "password"
+}
+```
+
+----------------------------
 
 Delete a user:
 
